@@ -1,4 +1,4 @@
-/* CSS Reset e Configurações de Escopo */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +7,15 @@
 }
 
 :root {
-  --primary: #5932EA;        /* Roxo original do Evolux */
+  --primary: #5932EA;        
   --primary-hover: #4823d1;
   --primary-light: #f3e8ff;
-  --accent: #7C3AED;         /* Violeta vibrante */
+  --accent: #7C3AED;         
   --accent-hover: #6D28D9;
   --accent-light: #F5F3FF;
   --bg-light: #f6f8fc;
   --bg-white: #ffffff;
-  --text-dark: #1f1b2e;      /* Roxo escuro profundo (sem usar preto puro) */
+  --text-dark: #1f1b2e;      
   --text-muted: #6b7280;
   --text-light: #9ca3af;
   --border-color: rgba(89, 50, 234, 0.08);
@@ -41,7 +41,6 @@ body {
   position: relative;
 }
 
-/* Custom Cursor */
 .custom-cursor {
   width: 18px;
   height: 18px;
@@ -62,7 +61,6 @@ body {
   }
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -70,7 +68,6 @@ body {
   padding: 0 24px;
 }
 
-/* Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -85,7 +82,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -151,11 +147,9 @@ body {
   width: 100%;
 }
 
-/* Text Highlights */
 .text-purple { color: var(--primary); }
 .text-violet { color: var(--accent); }
 
-/* Cabeçalho */
 .header {
   position: fixed;
   top: 0;
@@ -225,7 +219,6 @@ body {
   width: 100%;
 }
 
-/* Hero Section */
 .hero-section {
   padding-top: 170px;
   padding-bottom: 90px;
@@ -264,7 +257,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* Trust area */
 .hero-trust {
   display: flex;
   flex-direction: column;
@@ -295,7 +287,6 @@ body {
   color: var(--text-muted);
 }
 
-/* Visual da Hero */
 .hero-visual-container {
   position: relative;
   display: flex;
@@ -379,7 +370,6 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* Funcionalidades Section */
 .funcionalidades-section {
   padding: 100px 0;
   background-color: var(--bg-white);
@@ -452,7 +442,6 @@ body {
   line-height: 1.6;
 }
 
-/* Dashboard Interativo (Live Demo) */
 .demo-section {
   padding: 100px 0;
   background-color: var(--bg-light);
@@ -471,7 +460,6 @@ body {
   height: 580px;
 }
 
-/* Sidebar */
 .app-sidebar {
   background-color: #fafbfd;
   border-right: 1px solid var(--border-color);
@@ -578,7 +566,6 @@ body {
   color: var(--accent);
 }
 
-/* Área Principal do Dashboard */
 .app-main-content {
   display: flex;
   flex-direction: column;
@@ -610,7 +597,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Pane / Tabs */
 .dashboard-pane {
   display: none;
   padding: 32px;
@@ -628,7 +614,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Tab 1: Painel Geral */
 .ai-insight-box {
   background-color: var(--text-dark);
   color: var(--bg-white);
@@ -779,7 +764,6 @@ body {
   margin-top: 8px;
 }
 
-/* Tab Split layout para Info e Ação */
 .pane-split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -887,7 +871,6 @@ body {
   line-height: 1.2;
 }
 
-/* Frete Results Card (Dashboard Tab 2) */
 .frete-results-card {
   margin-top: 20px;
   background-color: var(--bg-white);
@@ -953,7 +936,6 @@ body {
   color: var(--accent);
 }
 
-/* Spinner */
 .spinner-container {
   display: flex;
   align-items: center;
@@ -992,7 +974,6 @@ body {
   color: #f43f5e;
 }
 
-/* Tab 3: Pedidos Kanban */
 .kanban-info-header {
   margin-bottom: 24px;
 }
@@ -1115,7 +1096,6 @@ body {
   padding: 0;
 }
 
-/* Tab 4: Suporte */
 .support-channels {
   display: flex;
   flex-direction: column;
@@ -1151,7 +1131,6 @@ body {
   background-color: rgba(244, 63, 94, 0.01);
 }
 
-/* Sobre Nós */
 .sobre-section {
   padding: 100px 0;
   background-color: var(--bg-white);
@@ -1209,7 +1188,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Rodapé */
 .footer {
   padding: 60px 0;
   background-color: var(--bg-light);
@@ -1249,7 +1227,6 @@ body {
   color: var(--text-light);
 }
 
-/* Modal Overlay (Sucesso) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1316,7 +1293,6 @@ body {
   margin-bottom: 28px;
 }
 
-/* Responsividade Mobile/Tablet */
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1368,7 +1344,7 @@ body {
   }
 
   .sidebar-footer {
-    display: none; /* Simplificado */
+    display: none; 
   }
 
   .pane-split {
@@ -1407,7 +1383,6 @@ body {
   }
 }
 
-/* Estilos do Bloco de Contato */
 .contato-box {
   background-color: var(--bg-white);
   border: 1px solid var(--border-color);
@@ -1430,7 +1405,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* Estilos da Central de Ajuda (Tab 4 Mock) */
 .pane-help {
   display: flex;
   flex-direction: column;

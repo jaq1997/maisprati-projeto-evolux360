@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Cursor Customizado
   const cursor = document.getElementById('customCursor');
   
   if (cursor) {
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.style.top = `${e.clientY}px`;
     });
 
-    // Efeito hover ampliado para elementos interativos
     const addHoverListeners = () => {
       const hoverables = document.querySelectorAll('a, button, input, textarea, .menu-item, .kanban-card');
       hoverables.forEach(elem => {
@@ -24,11 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     addHoverListeners();
-    // Expor globalmente para re-vincular se houver elementos injetados dinamicamente
     window.updateCursorListeners = addHoverListeners;
   }
 
-  // 2. Simulador de Frete (API ViaCep)
   const cepInput = document.getElementById('cepInput');
   const btnCalcular = document.getElementById('btnCalcularFrete');
   const cepFeedback = document.getElementById('cepFeedback');
@@ -40,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeExpress = document.getElementById('timeExpress');
   const timeStandard = document.getElementById('timeStandard');
 
-  // Máscara básica para o CEP (00000-000)
   if (cepInput) {
     cepInput.addEventListener('input', (e) => {
       let value = e.target.value.replace(/\D/g, '');
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cepInput) return;
     const rawCep = cepInput.value.replace(/\D/g, '');
     
-    // Ocultar resultados anteriores
     freteResult.style.display = 'none';
     cepFeedback.textContent = '';
     cepFeedback.className = 'feedback-message';
@@ -66,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Exibir Loader
     freteLoading.style.display = 'flex';
 
     try {
@@ -81,10 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Sucesso na consulta
       resEndereco.textContent = `${data.localidade} - ${data.uf}`;
       
-      // Simulação regionalizada de prazos e valores
       const uf = data.uf.toUpperCase();
       let valorExpress = 9.90;
       let diasExpress = 2;
@@ -106,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         valorExpress = 19.90;
         diasExpress = 5;
         diasStandard = 8;
-      } else { // Região Norte
+      } else {
         valorExpress = 24.90;
         diasExpress = 7;
         diasStandard = 11;
@@ -116,14 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
       timeExpress.textContent = `Prazo: ${diasExpress} dias úteis`;
       timeStandard.textContent = `Prazo: ${diasStandard} dias úteis`;
 
-      // Mostrar card de resultado
       freteResult.style.display = 'block';
 
     } catch (error) {
       freteLoading.style.display = 'none';
       cepFeedback.textContent = 'Erro ao consultar API do ViaCep.';
       cepFeedback.classList.add('feedback-error');
-      console.error('Erro ViaCep:', error);
+      console.error(error);
     }
   };
 
@@ -136,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Validação do Formulário de Contato e Modal de Sucesso
   const contactForm = document.getElementById('contactForm');
   const inputName = document.getElementById('inputName');
   const inputEmail = document.getElementById('inputEmail');
@@ -155,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const validarFormulario = () => {
     let isValid = true;
 
-    // Nome
     if (inputName.value.trim() === '') {
       inputName.classList.add('input-error');
       nameError.style.display = 'block';
@@ -165,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
       nameError.style.display = 'none';
     }
 
-    // E-mail
     if (!emailRegex.test(inputEmail.value.trim())) {
       inputEmail.classList.add('input-error');
       emailError.style.display = 'block';
@@ -175,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
       emailError.style.display = 'none';
     }
 
-    // Mensagem
     if (inputMessage.value.trim() === '') {
       inputMessage.classList.add('input-error');
       messageError.style.display = 'block';
@@ -189,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (contactForm) {
-    // Remover classe de erro digitando
     inputName.addEventListener('input', () => {
       inputName.classList.remove('input-error');
       nameError.style.display = 'none';
@@ -214,13 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nomeClient = inputName.value.trim();
         const emailClient = inputEmail.value.trim();
 
-        // Configurar mensagem do modal dinamicamente
         successModalText.innerHTML = `Obrigado pelo contato, <strong>${nomeClient}</strong>!<br>Sua solicitação de demonstração foi registrada com sucesso. Em breve retornaremos em seu e-mail <strong>${emailClient}</strong>.`;
-
-        // Abrir modal
         successModal.classList.add('active');
-
-        // Limpar form
         contactForm.reset();
       }
     });
@@ -239,25 +219,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 4. Troca de Abas do Dashboard Interativo (Escopo Global para rodar nos botões inline)
 window.switchDashboardTab = (tabName) => {
-  // Remover classe ativa dos botões do menu
   const menuButtons = document.querySelectorAll('.menu-item');
   menuButtons.forEach(btn => btn.classList.remove('active'));
 
-  // Adicionar classe ativa no botão selecionado
   const activeBtn = document.getElementById(`${tabName}-tab`);
   if (activeBtn) activeBtn.classList.add('active');
 
-  // Ocultar todas as panes
   const panes = document.querySelectorAll('.dashboard-pane');
   panes.forEach(pane => pane.classList.remove('active'));
 
-  // Exibir a pane selecionada
   const activePane = document.getElementById(`pane-${tabName}`);
   if (activePane) activePane.classList.add('active');
 
-  // Atualizar título da Topbar do dashboard
   const topbarTitle = document.getElementById('dashboard-title');
   if (topbarTitle) {
     switch (tabName) {
@@ -274,24 +248,19 @@ window.switchDashboardTab = (tabName) => {
   }
 };
 
-// 5. Mover cards do Kanban (Simulação interativa)
 window.moveKanbanCard = (cardId, targetListId, targetColId) => {
   const cardElement = document.getElementById(cardId);
   const targetList = document.getElementById(targetListId);
   
   if (cardElement && targetList) {
-    // Mover o elemento no DOM
     targetList.appendChild(cardElement);
     
-    // Atualizar ação do botão dependendo de onde está
     const actionBtn = cardElement.querySelector('.card-action-btn');
     
     if (targetListId === 'list-separando') {
       actionBtn.textContent = 'Enviar Pedido →';
-      // Mudar onclick para avançar até o concluído
       actionBtn.setAttribute('onclick', `moveKanbanCard('${cardId}', 'list-concluido', 'col-concluido')`);
     } else if (targetListId === 'list-concluido') {
-      // Remover o botão e adicionar o badge de concluído
       actionBtn.remove();
       const badge = document.createElement('span');
       badge.className = 'card-badge-success';
@@ -299,30 +268,23 @@ window.moveKanbanCard = (cardId, targetListId, targetColId) => {
       cardElement.appendChild(badge);
     }
     
-    // Atualizar listeners de cursor para o card movido
     if (window.updateCursorListeners) {
       window.updateCursorListeners();
     }
   }
 };
 
-// 6. Rolar a página e abrir aba específica no Dashboard (ex: botões da Hero)
 window.scrollParaDemo = (tabId) => {
   const demoSection = document.getElementById('demo');
   if (demoSection) {
     demoSection.scrollIntoView({ behavior: 'smooth' });
-    
-    // Extrai o nome da aba (ex: 'contato-tab' vira 'contato')
     const tabName = tabId.replace('-tab', '');
-    
-    // Executa a troca após o scroll iniciar
     setTimeout(() => {
       window.switchDashboardTab(tabName);
     }, 300);
   }
 };
 
-// 7. Rolar para o formulário de contato externo ao final da página
 window.scrollParaFormulario = () => {
   const contatoSection = document.getElementById('contato');
   if (contatoSection) {

@@ -4,21 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evolux360 — Plataforma de Gestão Integrada e Automação de Vendas</title>
-  
-  <!-- Fontes do Google (Outfit para títulos marcantes, Inter para textos limpos) -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Estilos -->
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cursor Customizado -->
   <div class="custom-cursor" id="customCursor"></div>
 
-  <!-- Cabeçalho (Estilo Appmax) -->
   <header class="header">
     <div class="container header-container">
       <a href="#" class="logo">
@@ -45,7 +41,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-section">
     <div class="container hero-container">
       <div class="hero-content">
@@ -56,7 +51,6 @@
           <button class="btn btn-primary btn-lg" onclick="scrollParaFormulario()">Solicitar Demonstração</button>
         </div>
 
-        <!-- Trust Badges / Provas Sociais -->
         <div class="hero-trust">
           <span class="trust-title">INTEGRAÇÕES SUPORTADAS:</span>
           <div class="trust-icons">
@@ -69,7 +63,7 @@
 
       <div class="hero-visual-container">
         <div class="hero-glowing-effect"></div>
-        <!-- Card de Destaque Flutuante -->
+        
         <div class="floating-metric-card">
           <div class="metric-top">
             <span class="metric-badge">Taxa de Conversão</span>
@@ -82,7 +76,6 @@
     </div>
   </section>
 
-  <!-- Funcionalidades (Grid de Benefícios) -->
   <section id="funcionalidades" class="funcionalidades-section">
     <div class="container">
       <div class="section-header">
@@ -116,7 +109,6 @@
     </div>
   </section>
 
-  <!-- Live Demo Section (Dashboard Interativo 1:1) -->
   <section id="demo" class="demo-section">
     <div class="container">
       <div class="section-header">
@@ -124,9 +116,8 @@
         <p class="section-subtitle">Use o simulador abaixo para testar as abas do sistema em tempo real. Interaja com a API do ViaCep ou envie mensagens pela área de suporte.</p>
       </div>
 
-      <!-- Estrutura do Dashboard Interativo -->
       <div class="app-dashboard">
-        <!-- Sidebar do Dashboard -->
+        
         <aside class="app-sidebar">
           <div class="sidebar-header">
             <div class="logo-icon small">
@@ -164,17 +155,15 @@
           </div>
         </aside>
 
-        <!-- Área Principal de Conteúdo do Dashboard -->
         <main class="app-main-content">
-          <!-- TOPBAR -->
+          
           <div class="app-topbar">
             <h3 class="topbar-title" id="dashboard-title">Painel Geral</h3>
             <div class="topbar-badge">Ambiente de Testes</div>
           </div>
 
-          <!-- TAB 1: PAINEL GERAL -->
           <div class="dashboard-pane active" id="pane-painel">
-            <!-- AI Notification Box -->
+            
             <div class="ai-insight-box">
               <div class="ai-insight-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
@@ -185,7 +174,6 @@
               </div>
             </div>
 
-            <!-- Stats -->
             <div class="stats-grid">
               <div class="stat-box">
                 <span class="stat-box-title">Receita Acumulada</span>
@@ -204,7 +192,6 @@
               </div>
             </div>
 
-            <!-- Gráfico Customizado em CSS puro -->
             <div class="chart-container">
               <h4 class="chart-title">Desempenho Semanal de Vendas</h4>
               <div class="bar-chart">
@@ -239,7 +226,6 @@
             </div>
           </div>
 
-          <!-- TAB 2: LOGÍSTICA VIA CEP -->
           <div class="dashboard-pane" id="pane-logistica">
             <div class="pane-split">
               <div class="pane-split-info">
@@ -263,13 +249,11 @@
                     <div id="cepFeedback" class="feedback-message"></div>
                   </div>
 
-                  <!-- Loader -->
                   <div id="freteLoading" class="spinner-container" style="display: none;">
                     <div class="spinner"></div>
                     <span class="spinner-text">Consultando CEP na API ViaCep...</span>
                   </div>
 
-                  <!-- Resultados -->
                   <div id="freteResult" class="frete-results-card" style="display: none;">
                     <div class="results-location-header">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5932EA" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -298,7 +282,6 @@
             </div>
           </div>
 
-          <!-- TAB 3: PEDIDOS KANBAN -->
           <div class="dashboard-pane" id="pane-pedidos">
             <div class="kanban-info-header">
               <h4>Mecanismo de Fluxo de Pedidos (CRM)</h4>
@@ -306,7 +289,7 @@
             </div>
 
             <div class="kanban-board">
-              <!-- Coluna 1 -->
+              
               <div class="kanban-column" id="col-novo">
                 <div class="column-header">
                   <span class="column-dot dot-blue"></span>
@@ -328,18 +311,16 @@
                 </div>
               </div>
 
-              <!-- Coluna 2 -->
               <div class="kanban-column" id="col-separando">
                 <div class="column-header">
                   <span class="column-dot dot-orange"></span>
                   <span class="column-title">A Separar</span>
                 </div>
                 <div class="kanban-cards-list" id="list-separando">
-                  <!-- Injetado dinamicamente via JS se avançado -->
+                  
                 </div>
               </div>
 
-              <!-- Coluna 3 -->
               <div class="kanban-column" id="col-concluido">
                 <div class="column-header">
                   <span class="column-dot dot-green"></span>
@@ -368,10 +349,9 @@
     </div>
   </section>
 
-  <!-- Sobre e Contato Section -->
   <section id="sobre" class="sobre-section">
     <div class="container sobre-container">
-      <!-- Coluna da Esquerda: Sobre -->
+      
       <div class="sobre-info-block">
         <h2 class="section-title">Evoluindo a forma de gerir processos corporativos.</h2>
         <p class="sobre-text">A Evolux360 é uma startup de tecnologia focada em simplificar processos operacionais complexos para pequenas e médias empresas brasileiras. Oferecemos controle absoluto de inventário, relatórios de tesouraria de fácil leitura e disparos automáticos para otimizar os fluxos de caixa.</p>
@@ -389,7 +369,6 @@
         </div>
       </div>
 
-      <!-- Coluna da Direita: Contato (Fale Conosco) -->
       <div id="contato" class="contato-box">
         <h3 class="contato-title">Fale Conosco</h3>
         <p class="contato-desc">Preencha o formulário abaixo para abrir um chamado de suporte ou solicitar demonstração.</p>
@@ -419,7 +398,6 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-left">
@@ -440,7 +418,6 @@
     </div>
   </footer>
 
-  <!-- Modal de Sucesso (JS Action) -->
   <div class="modal-overlay" id="successModal">
     <div class="modal-card">
       <div class="modal-icon-success">
@@ -454,7 +431,6 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
