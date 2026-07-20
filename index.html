@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolux360 — Plataforma de Gestão Integrada e Automação de Vendas</title>
+  
+  <!-- Fontes do Google (Outfit para títulos marcantes, Inter para textos limpos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cursor Customizado -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- Cabeçalho (Estilo Appmax) -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="8" height="8" rx="2.5" fill="#5932EA"/>
+            <rect x="13" y="3" width="8" height="8" rx="2.5" fill="#7C3AED"/>
+            <rect x="3" y="13" width="8" height="8" rx="2.5" fill="#7C3AED"/>
+            <rect x="13" y="13" width="8" height="8" rx="2.5" fill="#5932EA"/>
+          </svg>
+        </div>
+        <span class="logo-text">Evolux<span class="text-violet">360</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+        <a href="#demo" class="nav-link">Demonstração</a>
+        <a href="#sobre" class="nav-link">Sobre nós</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contato" class="btn btn-primary" id="headerCtaBtn">Falar com Consultor</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">A plataforma de gestão que maximiza os resultados da sua empresa.</h1>
+        <p class="hero-desc">Esqueça os processos manuais. Reúna vendas, finanças, estoque e integrações inteligentes de logística em um único painel robusto feito para acelerar seu faturamento.</p>
+        
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="scrollParaFormulario()">Solicitar Demonstração</button>
+        </div>
+
+        <!-- Trust Badges / Provas Sociais -->
+        <div class="hero-trust">
+          <span class="trust-title">INTEGRAÇÕES SUPORTADAS:</span>
+          <div class="trust-icons">
+            <span class="trust-tag">ViaCep API</span>
+            <span class="trust-tag">WhatsApp API</span>
+            <span class="trust-tag">Gateways de Pagamento</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-container">
+        <div class="hero-glowing-effect"></div>
+        <!-- Card de Destaque Flutuante -->
+        <div class="floating-metric-card">
+          <div class="metric-top">
+            <span class="metric-badge">Taxa de Conversão</span>
+            <span class="metric-trend">+24.8%</span>
+          </div>
+          <span class="metric-number">98.2%</span>
+          <p class="metric-label">Aprovação média em checkout</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funcionalidades (Grid de Benefícios) -->
+  <section id="funcionalidades" class="funcionalidades-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Construído para escalar a sua operação</h2>
+        <p class="section-subtitle">Tecnologia avançada de backend com visual simplificado, proporcionando controle de ponta a ponta sem planilhas.</p>
+      </div>
+
+      <div class="funcionalidades-grid">
+        <div class="func-card">
+          <div class="func-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5932EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="13" y2="17"></line></svg>
+          </div>
+          <h3>Centralização Core</h3>
+          <p>Mantenha cadastros de clientes, histórico de faturamento e fluxo de estoque sincronizados.</p>
+        </div>
+        <div class="func-card">
+          <div class="func-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5932EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v12M6 12h12"/></svg>
+          </div>
+          <h3>Inteligência de Vendas</h3>
+          <p>Nosso painel monitora tendências de recompra e otimiza o fluxo de ofertas automaticamente.</p>
+        </div>
+        <div class="func-card">
+          <div class="func-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5932EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <h3>API Logística Nativa</h3>
+          <p>Conexão automática com bases de CEP nacionais para cálculo instantâneo de distância e fretes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo Section (Dashboard Interativo 1:1) -->
+  <section id="demo" class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Explore a interface do Evolux360</h2>
+        <p class="section-subtitle">Use o simulador abaixo para testar as abas do sistema em tempo real. Interaja com a API do ViaCep ou envie mensagens pela área de suporte.</p>
+      </div>
+
+      <!-- Estrutura do Dashboard Interativo -->
+      <div class="app-dashboard">
+        <!-- Sidebar do Dashboard -->
+        <aside class="app-sidebar">
+          <div class="sidebar-header">
+            <div class="logo-icon small">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="8" height="8" rx="2" fill="#5932EA"/>
+                <rect x="13" y="3" width="8" height="8" rx="2" fill="#7C3AED"/>
+                <rect x="3" y="13" width="8" height="8" rx="2" fill="#7C3AED"/>
+                <rect x="13" y="13" width="8" height="8" rx="2" fill="#5932EA"/>
+              </svg>
+            </div>
+            <span class="sidebar-brand">Evolux360</span>
+          </div>
+
+          <div class="sidebar-menu">
+            <button class="menu-item active" id="painel-tab" onclick="switchDashboardTab('painel')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+              <span>Dashboard</span>
+            </button>
+            <button class="menu-item" id="pedidos-tab" onclick="switchDashboardTab('pedidos')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span>CRM / Vendas</span>
+            </button>
+            <button class="menu-item" id="logistica-tab" onclick="switchDashboardTab('logistica')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Estoque & Logística</span>
+            </button>
+          </div>
+
+          <div class="sidebar-footer">
+            <div class="user-avatar">E</div>
+            <div class="user-info">
+              <span class="user-name">Administrador</span>
+              <span class="user-status">Modo Demonstração</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Área Principal de Conteúdo do Dashboard -->
+        <main class="app-main-content">
+          <!-- TOPBAR -->
+          <div class="app-topbar">
+            <h3 class="topbar-title" id="dashboard-title">Painel Geral</h3>
+            <div class="topbar-badge">Ambiente de Testes</div>
+          </div>
+
+          <!-- TAB 1: PAINEL GERAL -->
+          <div class="dashboard-pane active" id="pane-painel">
+            <!-- AI Notification Box -->
+            <div class="ai-insight-box">
+              <div class="ai-insight-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <div class="ai-insight-content">
+                <span class="ai-insight-tag">Evolux AI Insights</span>
+                <p>"Identificamos que 82% das tentativas de compra abandonadas foram recuperadas via disparo de WhatsApp automático."</p>
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-box-title">Receita Acumulada</span>
+                <div class="stat-box-value">R$ 124.500,00</div>
+                <span class="stat-box-trend trend-up">↑ 12% vs mês anterior</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-title">Taxa de Conversão</span>
+                <div class="stat-box-value">91,4%</div>
+                <span class="stat-box-trend trend-up">↑ 3.2% hoje</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-title">Ticket Médio</span>
+                <div class="stat-box-value">R$ 278,24</div>
+                <span class="stat-box-trend trend-down">↓ 1.4% esta semana</span>
+              </div>
+            </div>
+
+            <!-- Gráfico Customizado em CSS puro -->
+            <div class="chart-container">
+              <h4 class="chart-title">Desempenho Semanal de Vendas</h4>
+              <div class="bar-chart">
+                <div class="chart-y-axis">
+                  <span>100%</span>
+                  <span>50%</span>
+                  <span>0%</span>
+                </div>
+                <div class="chart-bars">
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height: 65%;"></div>
+                    <span class="bar-label">Seg</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height: 80%;"></div>
+                    <span class="bar-label">Ter</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height: 45%;"></div>
+                    <span class="bar-label">Qua</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height: 90%;"></div>
+                    <span class="bar-label">Qui</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height: 75%;"></div>
+                    <span class="bar-label">Sex</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: LOGÍSTICA VIA CEP -->
+          <div class="dashboard-pane" id="pane-logistica">
+            <div class="pane-split">
+              <div class="pane-split-info">
+                <h4>Simulação de Gateway de Frete</h4>
+                <p>Nesta área você testa a API do ViaCep integrada ao motor de frete da Evolux. O sistema consulta dinamicamente a base dos Correios e aplica margens de preços personalizadas para cada estado brasileiro.</p>
+                <ul class="bullet-list">
+                  <li><strong>Estados do Sul/Sudeste</strong>: Prazo recorde e tarifas reduzidas.</li>
+                  <li><strong>Região Nordeste e Centro-Oeste</strong>: Logística integrada de média distância.</li>
+                  <li><strong>Região Norte</strong>: Tarifas padrão e frete grátis via transportadora parceira.</li>
+                </ul>
+              </div>
+
+              <div class="pane-split-action">
+                <div class="simulation-box">
+                  <div class="form-group">
+                    <label class="form-label" for="cepInput">Informe o CEP de entrega</label>
+                    <div class="input-with-btn">
+                      <input type="text" id="cepInput" class="form-control" placeholder="00000-000" maxlength="9">
+                      <button id="btnCalcularFrete" class="btn btn-primary">Simular</button>
+                    </div>
+                    <div id="cepFeedback" class="feedback-message"></div>
+                  </div>
+
+                  <!-- Loader -->
+                  <div id="freteLoading" class="spinner-container" style="display: none;">
+                    <div class="spinner"></div>
+                    <span class="spinner-text">Consultando CEP na API ViaCep...</span>
+                  </div>
+
+                  <!-- Resultados -->
+                  <div id="freteResult" class="frete-results-card" style="display: none;">
+                    <div class="results-location-header">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5932EA" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span id="resEndereco">São Paulo - SP</span>
+                    </div>
+
+                    <div class="results-list">
+                      <div class="result-item">
+                        <div class="result-details">
+                          <span class="result-name">Evolux Sedex Express</span>
+                          <span class="result-time" id="timeExpress">Prazo: 2 dias úteis</span>
+                        </div>
+                        <span class="result-cost" id="priceExpress">R$ 9,90</span>
+                      </div>
+                      <div class="result-item">
+                        <div class="result-details">
+                          <span class="result-name">Evolux Standard Pac</span>
+                          <span class="result-time" id="timeStandard">Prazo: 5 dias úteis</span>
+                        </div>
+                        <span class="result-cost cost-free">Grátis</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: PEDIDOS KANBAN -->
+          <div class="dashboard-pane" id="pane-pedidos">
+            <div class="kanban-info-header">
+              <h4>Mecanismo de Fluxo de Pedidos (CRM)</h4>
+              <p>Gerencie o pipeline de vendas de forma interativa. Clique em <strong>"Avançar Status"</strong> em qualquer card de pedido para mudar seu status e acompanhar o fluxo logístico em tempo real.</p>
+            </div>
+
+            <div class="kanban-board">
+              <!-- Coluna 1 -->
+              <div class="kanban-column" id="col-novo">
+                <div class="column-header">
+                  <span class="column-dot dot-blue"></span>
+                  <span class="column-title">Novo Pedido</span>
+                </div>
+                <div class="kanban-cards-list" id="list-novo">
+                  <div class="kanban-card" id="card-1">
+                    <div class="card-top">
+                      <span class="card-id">#1502</span>
+                      <span class="card-date">Hoje, 14:32</span>
+                    </div>
+                    <h5 class="card-client">João Pedro S.</h5>
+                    <div class="card-details">
+                      <span>1x Evolux Core Kit</span>
+                      <span class="card-price">R$ 1.500,00</span>
+                    </div>
+                    <button class="btn btn-xs btn-primary card-action-btn" onclick="moveKanbanCard('card-1', 'list-separando', 'col-separando')">Avançar Status →</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coluna 2 -->
+              <div class="kanban-column" id="col-separando">
+                <div class="column-header">
+                  <span class="column-dot dot-orange"></span>
+                  <span class="column-title">A Separar</span>
+                </div>
+                <div class="kanban-cards-list" id="list-separando">
+                  <!-- Injetado dinamicamente via JS se avançado -->
+                </div>
+              </div>
+
+              <!-- Coluna 3 -->
+              <div class="kanban-column" id="col-concluido">
+                <div class="column-header">
+                  <span class="column-dot dot-green"></span>
+                  <span class="column-title">Enviado / Concluído</span>
+                </div>
+                <div class="kanban-cards-list" id="list-concluido">
+                  <div class="kanban-card" id="card-2">
+                    <div class="card-top">
+                      <span class="card-id">#1499</span>
+                      <span class="card-date">Ontem, 11:15</span>
+                    </div>
+                    <h5 class="card-client">Carla Souza Lima</h5>
+                    <div class="card-details">
+                      <span>3x Evolux Comercial</span>
+                      <span class="card-price">R$ 4.200,00</span>
+                    </div>
+                    <span class="card-badge-success">Concluído</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre e Contato Section -->
+  <section id="sobre" class="sobre-section">
+    <div class="container sobre-container">
+      <!-- Coluna da Esquerda: Sobre -->
+      <div class="sobre-info-block">
+        <h2 class="section-title">Evoluindo a forma de gerir processos corporativos.</h2>
+        <p class="sobre-text">A Evolux360 é uma startup de tecnologia focada em simplificar processos operacionais complexos para pequenas e médias empresas brasileiras. Oferecemos controle absoluto de inventário, relatórios de tesouraria de fácil leitura e disparos automáticos para otimizar os fluxos de caixa.</p>
+        <p class="sobre-text">A nossa plataforma foi projetada sob uma arquitetura leve, garantindo velocidade de carregamento e compatibilidade móvel sem a necessidade de aplicativos pesados.</p>
+        
+        <div class="sobre-visual-stats">
+          <div class="about-stat-card">
+            <span class="about-stat-num">50k+</span>
+            <span class="about-stat-label">Vendas Processadas</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="about-stat-num">98.4%</span>
+            <span class="about-stat-label">Índice de Satisfação</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna da Direita: Contato (Fale Conosco) -->
+      <div id="contato" class="contato-box">
+        <h3 class="contato-title">Fale Conosco</h3>
+        <p class="contato-desc">Preencha o formulário abaixo para abrir um chamado de suporte ou solicitar demonstração.</p>
+        
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="inputName" class="form-label">Nome Completo</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Digite seu nome" required>
+            <div class="input-error-msg" id="nameError">O nome é obrigatório.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail" class="form-label">E-mail para Retorno</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="exemplo@empresa.com" required>
+            <div class="input-error-msg" id="emailError">E-mail inválido.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputMessage" class="form-label">Como podemos ajudar?</label>
+            <textarea id="inputMessage" class="form-control form-textarea" placeholder="Sua mensagem..." required></textarea>
+            <div class="input-error-msg" id="messageError">Escreva sua mensagem.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Quero saber mais da Evolux360</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="8" height="8" rx="2" fill="#5932EA"/>
+            <rect x="13" y="3" width="8" height="8" rx="2" fill="#5932EA"/>
+            <rect x="3" y="13" width="8" height="8" rx="2" fill="#5932EA"/>
+            <rect x="13" y="13" width="8" height="8" rx="2" fill="#5932EA"/>
+          </svg>
+          <span>Evolux360</span>
+        </div>
+        <p class="footer-desc">Soluções automatizadas e simplificadas de faturamento e CRM.</p>
+      </div>
+      <div class="footer-right">
+        <span class="footer-copy">&copy; 2026 Evolux360. Projeto de entrega acadêmica. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Sucesso (JS Action) -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div class="modal-icon-success">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="modal-title">Mensagem Enviada!</h3>
+      <p class="modal-text" id="successModalText">Seu chamado de suporte foi aberto com sucesso.</p>
+      <button class="btn btn-primary" id="btnFecharModal">Ok, entendi</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
